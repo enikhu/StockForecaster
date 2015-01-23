@@ -5,3 +5,4 @@
 4. Sheza Nasim -1PI12CS158 - sheza.nasim@gmail.com
 5. Manisha Jajoo - 1PI12CS084 - manishajajoo94@gmail.com
 6. Nitin Bhyri -1PI12CS111 - nitinbhyri@gmail.com
+7. Rubina Aafreen Jahan - 1PI12CS142 - rubina.aafreenjahan1995@gmail.com
