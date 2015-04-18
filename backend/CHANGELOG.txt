@@ -1,0 +1,7 @@
+Please update the CHANGELOG.txt about any changes maded to code! [chronological order]
+
+Format:
+Date (DD-MM-YYYY) | Changes made to code
+
+Example:
+18-04-2015 | Added CHANGELOG.txt to backend folder [V1.0]
