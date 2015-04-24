@@ -3,6 +3,7 @@
  */
 public class Main {
     public static void main(String args[]) {
-        CSVReader.read("amzn1.csv");
+    	System.out.println(args[0]);
+        CSVReader.read(args[0]);
     }
 }

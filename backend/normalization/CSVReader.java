@@ -15,33 +15,26 @@ public class CSVReader {
             String line = "";
             br = new BufferedReader(new FileReader(path));
             List<String> date = new ArrayList<String>();
-            List<Double> oldOpen = new ArrayList<Double>();
-			List<Double> oldHigh = new ArrayList<Double>();
-			List<Double> oldLow = new ArrayList<Double>();            
-			List<Double> oldClose = new ArrayList<Double>();
+            List<Double> oldv = new ArrayList<Double>();
+            //line=br.readLine();
             while ((line = br.readLine()) != null) {
                 String[] val = line.split(",");
-                date.add(val[1]);
-                oldOpen.add(Double.parseDouble(val[2]));
-				oldHigh.add(Double.parseDouble(val[3]));
-				oldLow.add(Double.parseDouble(val[4]));
-				oldClose.add(Double.parseDouble(val[5]));
+                //System.out.println(val.length);
+                if((val.length!=1)&&(!val[1].equals("Open"))){
+               		//System.out.println(val[1]);
+                	date.add(val[1]);
+                	oldv.add(Double.parseDouble(val[2]));
+                	}
             }
-            double []newOpen = new double[oldOpen.size()];
-			double []newHigh = new double[oldHigh.size()];
-			double []newLow = new double[oldLow.size()];
-			double []newClose = new double[oldClose.size()];
+            double []newv = new double[oldv.size()];
             //Normalizing
-            for(int i = 0; i < oldOpen.size() - 1; ++i) {
-                newOpen[i] =(oldOpen.get(i) + oldOpen.get(i+1)) / 2.0;
-				newHigh[i] =(oldHigh.get(i) + oldHigh.get(i+1)) / 2.0;
-				newLow[i] =(oldLow.get(i) + oldLow.get(i+1)) / 2.0;
-				newClose[i] =(oldClose.get(i) + oldClose.get(i+1)) / 2.0;
+            for(int i = 0; i < oldv.size() - 1; ++i) {
+                newv[i] =(oldv.get(i) + oldv.get(i+1)) / 2.0;
             }
             /*for(int i = 0; i < oldv.size() - 1; ++i) {
                 System.out.println(oldv.get(i) + "  " + newv[i]);
             }*/
-            CSVWriter.write("Normalized.csv",date,newOpen,newHigh,newLow,newClose);
+            CSVWriter.write("Normalized"+path,date,newv);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
