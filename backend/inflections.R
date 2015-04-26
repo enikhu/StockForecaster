@@ -20,9 +20,16 @@ scores <- sapply(k:(length(v2)-k), FUN=function(i){
 inflections <- (k:(length(v2)-k))[scores>=cutoff]
 coname<-unlist(strsplit(args[1], "[.]"))
 #creating name of inflection points file to be generated
-coname<-paste(coname[1],"inflection",sep="-")
-file.create(coname)
-fileConn<-file(coname)
-writeLines(as.character(ms$Date[inflections]), fileConn)
+coname<-gsub("Normalized","",coname)
+#coname<-paste(coname[1],"txt",sep=".")
+#print(coname[1])
+file.create(coname[1])
+fileConn<-file(coname[1])
+points<-sapply(as.character(ms$Date[inflections]),FUN=function(i){
+	val<-unlist(strsplit(i, "[-]"))
+	val<-paste(val[1],val[2],val[3],sep="")
+})
+print(length(points))
+writeLines(as.character(points), fileConn)
 close(fileConn)
-print(inflections)
+#print(inflections)

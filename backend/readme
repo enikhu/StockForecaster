@@ -1,0 +1,13 @@
+#install rcharts,forecast,ggplot2,tseries,zoo in R
+
+#Using command below :
+crontab -e
+#make an entry 
+@dailly sh /<path to automate.sh>
+for testing purpose use
+*/5 * * * * sh <path to automate.sh>                #executes every 5  minutes
+
+#make sure u have required write permissions for  htdocs or /var/www.
+#Both frontend and backend folders should be present in the above path.
+#change path of setwd() function in both stock.R and new_algo.R to corresponding SE folder of frontend.
+#Similarly initial path to file_get_contents must be changed to point to backend folder.

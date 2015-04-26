@@ -1,10 +1,9 @@
 <?php
 set_time_limit(300);//to increase the maximum execution time as this script takes more than 30 secs to execute(default max execution time is 30secs).
-//$company = $argv[1]; //1st command line argument(company name)
-$company = 'intel';
-$output = $company."_output.txt";
+$company = $argv[1]; //1st command line argument(company name)
+$output = $company."_news";
 //to increase the maximum execution time as this script takes more than 30 secs to execute(default max execution time is 30secs).
-$datesContent = file_get_contents('http://localhost/getNews/'.$company.'.txt');
+$datesContent = file_get_contents('http://localhost/backend/'.$company);
 //new.txt is the file with the inflection points dates 
 $dates = explode("\n", $datesContent);
 //inflection points dates are in this array
@@ -32,7 +31,7 @@ foreach ($dates as $value) {
 			$headLines = $headLines.$value."~";
 		}
 	}
-		$headLines = $headLines.PHP_EOL.PHP_EOL;
+		$headLines = $headLines.PHP_EOL;
 	
 }
 //echo $result;
@@ -41,5 +40,3 @@ fwrite($file,$headLines);
 fclose($file);
 curl_close($curl);
 ?>
-
-

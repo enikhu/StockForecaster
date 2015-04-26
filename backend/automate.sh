@@ -8,8 +8,14 @@ do
 done
 for file in  NormalizedIntel.csv NormalizedMicrosoft.csv NormalizedAmazon.csv
 do
-	Rscript /var/www/backend/inflections.R $file
-	Rscript /var/www/backend/stock.R $file 
-	Rscript /var/www/backend/new_algo.r $file
+	Rscript inflections.R $file
 done
-
+for file in Intel Microsoft Amazon
+do
+	php getNews.php $file
+done
+for file in  NormalizedIntel.csv NormalizedMicrosoft.csv NormalizedAmazon.csv
+do
+	Rscript stock.R $file 
+	Rscript new_algo.r $file
+done
