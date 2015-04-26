@@ -1,4 +1,4 @@
-setwd("/home/saienthan/College/SE/StockForecaster/backend/testing/");
+setwd("/home/saienthan/College/SE/R/tests");
 library(forecast)
 plotForecastErrors <- function(forecasterrors)
 {
@@ -48,9 +48,8 @@ scores <- sapply(k:(length(v2)-k), FUN=function(i){
 })
 inflections <- (k:(length(v2)-k))[scores>=cutoff]
 passed <- 0
-op <- file("test.log",open="wt")
+op <- file("output.txt",open="wt")
 sink(op)
-cat("TEST POINTS: ",test_points,"\n")
 cat("--------------------------------\n")
 for(i in test_points){ 
   days <- sample(1:4, 1, replace=F)

@@ -8,4 +8,3 @@
 7. Rubina Aafreen Jahan - 1PI12CS142 - rubina.aafreenjahan1995@gmail.com
 8. Shreya Bhat - 1PI12CS163 - shreya.bhatk@gmail.com
 9. Ravi kumar v - 1PI12CS133 - 123vravikumar@gmail.com
-10. Praveen G - 1PI12CS123 - praveeng271@gmail.com

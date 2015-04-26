@@ -37,7 +37,7 @@
 </div>
 	<div class="col-lg-4" style="position:absolute;top:600px;left:30px;">
                     <div class="panel panel-default">
-						<a href = "predicted_value.html" class="btn btn-lg btn-success btn-block">
+						<a href = "<?php echo "predicted_value.php?comp="."pred1Normalized".$_POST['lsCompanyName'].".html"; ?>" class="btn btn-lg btn-success btn-block">
 								<i class="fa fa-shopping-cart fa-fw"></i><center>Prediction Algorithm -1</center>
 								</a>
 					</div>
